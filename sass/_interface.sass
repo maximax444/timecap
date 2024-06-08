@@ -59,8 +59,55 @@ $red: #e22126
                 border-bottom: 1px solid $red
     &__logo
         display: flex
+@keyframes themeTitle
+    0%
+        transform: rotate(-22deg)
+    100%
+        transform: rotate(338deg)
 .team
     padding-bottom: 110px
+    &__top
+        display: flex
+        margin-bottom: 62px
+        overflow: hidden
+    &__title
+        padding: 16px 42px
+        font-weight: 700
+        font-size: 32px
+        line-height: 125%
+        color: #000
+        position: relative
+        span
+            display: block
+            color: $red
+        &::before
+            content: ""
+            display: block
+            width: 100%
+            height: 100%
+            position: absolute
+            top: 0
+            left: 0
+            border: 1px solid #d9d9d9
+            z-index: -2
+        &::after
+            content: ""
+            display: block
+            width: 0
+            height: 0
+            border-left: 900px solid transparent
+            border-right: 900px solid transparent
+            border-top: 210px solid #fff
+            border-bottom: 210px solid #fff
+            border-radius: 50%
+            position: absolute
+            top: 50%
+            margin-top: -210px
+            margin-left: -900px
+            left: 50%
+            z-index: -1
+            transform: rotate(-22deg)
+            animation: 3s themeTitle 1s infinite
     &__wrap
         display: grid
         grid-template-columns: repeat(2, 1fr)
