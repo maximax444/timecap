@@ -1,4 +1,5 @@
 .supp
+    padding-bottom: 100px
     &__title
         margin-top: 0
         margin-bottom: 48px
@@ -17,3 +18,64 @@
     &__wrap
         columns: 2
         gap: 100px
+    &__block
+        padding: 32px 0
+        display: flex
+        position: relative
+        &::after
+            content: ""
+            display: block
+            height: 1px
+            width: calc(100% - 68px)
+            position: absolute
+            bottom: 0
+            right: 0
+            background: #d9d9d9
+        &:nth-child(3n)::after
+            display: none
+    &__icon
+        width: 68px
+        img
+            max-width: 80%
+            height: auto
+    &__text
+        width: calc(100% - 68px)
+        margin: 0
+        font-weight: 400
+        font-size: 16px
+        line-height: 125%
+        color: #000
+@media(max-width: 991px)
+    .supp
+        &__wrap
+            columns: auto
+        &__block
+            &:nth-child(3n)::after
+                display: block
+            &:last-child::after
+                display: none
+@media(max-width: 575px)
+    .supp
+        padding-bottom: 75px
+        &__title
+            font-size: 24px
+            line-height: 117%
+            margin-bottom: 26px
+        &__descr
+            margin-bottom: 2px
+            font-size: 16px
+            line-height: 125%
+            color: #000
+        &__block
+            padding: 26px 0
+            &::after
+                width: calc( 100% - 58px )
+        &__text
+            font-size: 14px
+            line-height: 129%
+            width: calc( 100% - 58px )
+        &__icon
+            width: 58px
+            img
+                max-width: 34px
+                height: auto
