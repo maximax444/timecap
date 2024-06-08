@@ -15,7 +15,9 @@ window.addEventListener('scroll', function () {
 );
 
 let popupClose = document.querySelectorAll('.popup__close');
+let thxClose = document.querySelector('.overlay-thx__btn');
 let popup = document.querySelector('.overlay-call');
+let popupThx = document.querySelector('.overlay-thx');
 let popupOpen = document.querySelectorAll('.modal');
 popupClose.forEach((el) => {
     el.addEventListener('click', function () {
@@ -35,3 +37,14 @@ if (document.querySelector('.overlay-call')) {
         };
     };
 }
+if (document.querySelector('.overlay-thx')) {
+    document.querySelector('.overlay-thx').onclick = function (e) {
+        if (!e.target.closest('.popup')) {
+            popupThx.classList.remove('overlay-active');
+        };
+    };
+}
+thxClose.addEventListener("click", (e) => {
+    e.preventDefault();
+    popupThx.classList.remove('overlay-active');
+});

@@ -91,6 +91,56 @@
         grid-template-columns: 1fr 250px
         grid-gap: 56px
         align-items: flex-end
+.overlay-thx
+    .popup
+        padding: 70px
+        padding-bottom: 60px
+        width: 430px
+        display: flex
+        flex-direction: column
+        align-items: center
+    &__icon
+        display: flex
+        margin-bottom: 24px
+    &__title
+        margin-bottom: 14px
+        font-weight: 700
+        font-size: 24px
+        line-height: 133%
+        text-align: center
+        color: #000
+    &__descr
+        margin-bottom: 18px
+        font-weight: 400
+        font-size: 16px
+        line-height: 125%
+        text-align: center
+        color: #000
+    &__btn
+        width: 134px
+        text-decoration: none
+        border: 0
+        border-bottom: 1px solid #e22126
+        background: transparent
+        padding: 16px
+        display: flex
+        align-items: center
+        justify-content: center
+        grid-gap: 14px
+        font-weight: 400
+        font-size: 16px
+        line-height: 125%
+        text-align: center
+        color: #000
+        cursor: pointer
+        transition: all 0.3s
+        path
+            transition: all 0.3s
+        &:hover
+            color: $red
+            border-bottom: 1px solid #d9d9d9
+            path
+                stroke: $red
 @media(max-width: 767px)
     .overlay
         padding: 64px 0
@@ -111,3 +161,17 @@
         &__bottom
             padding-top: 25px
             display: block
+    .overlay-thx
+        .popup
+            padding: 68px 28px 48px
+        &__icon
+            margin-bottom: 22px
+        &__title
+            margin-bottom: 14px
+            font-size: 22px
+            line-height: 127%
+        &__descr
+            font-size: 16px
+            line-height: 125%
+        &__btn
+            width: 100%
