@@ -1,0 +1,113 @@
+.overlay
+    width: 100vw
+    height: 100vh
+    position: fixed
+    top: 0
+    left: 0
+    background: rgba(12, 0, 0, 0.7)
+    z-index: 11
+    display: none
+    justify-content: center
+    align-items: center
+    padding: 40px 0
+    &-active
+        display: flex
+.popup
+    width: 830px
+    background: #fff
+    max-width: 95%
+    padding: 60px 80px
+    position: relative
+    &__close
+        position: absolute
+        right: 20px
+        display: flex
+        align-items: center
+        justify-content: center
+        top: 20px
+        z-index: 2
+        cursor: pointer
+        path
+            transition: all 0.3s
+        &:hover
+            path
+                stroke: $red
+.overlay-call
+    &__title
+        margin-bottom: 45px
+        font-weight: 700
+        font-size: 24px
+        line-height: 133%
+        color: #000
+    &__form
+        &>input
+            width: 100%
+            display: block
+            margin-bottom: 28px
+            padding: 16px 0
+            font-weight: 400
+            font-size: 16px
+            line-height: 125%
+            border: 0
+            border-radius: 0
+            transition: all 0.3s
+            border-bottom: 1px solid #d9d9d9
+            &:hover, &:focus
+                border-bottom: 1px solid #878787
+            &::placeholder
+                color: #aeaeae
+        .call__check
+            input
+                &+span
+                    margin-top: 2px
+            p
+                font-size: 12px
+        button
+            border: 0
+            border-bottom: 1px solid #e22126
+            background: transparent
+            padding: 16px
+            display: flex
+            align-items: center
+            justify-content: center
+            grid-gap: 14px
+            font-weight: 400
+            font-size: 16px
+            line-height: 125%
+            text-align: center
+            color: #000
+            cursor: pointer
+            transition: all 0.3s
+            path
+                transition: all 0.3s
+            &:hover
+                color: $red
+                border-bottom: 1px solid #d9d9d9
+                path
+                    stroke: $red
+    &__bottom
+        padding-top: 10px
+        display: grid
+        grid-template-columns: 1fr 250px
+        grid-gap: 56px
+        align-items: flex-end
+@media(max-width: 767px)
+    .overlay
+        padding: 64px 0
+        align-items: flex-start
+        overflow-y: scroll
+    .popup
+        padding: 75px 24px 46px
+    .overlay-call
+        &__title
+            max-width: 240px
+            margin-bottom: 6px
+        &__form
+            button
+                width: 100%
+                margin-top: 19px
+            &>input
+                margin-bottom: 4px
+        &__bottom
+            padding-top: 25px
+            display: block
