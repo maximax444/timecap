@@ -118,12 +118,17 @@
             <div class="container">
                 <form class="call__form">
                     <input type="text" placeholder="Ваше имя*" required>
-                    <input type="tel" placeholder="Номер телефона*" required>
+                    <input type="tel" onkeypress="phoneInputValidation(event)" placeholder="Номер телефона*" required>
                     <input type="text" placeholder="Ваш вопрос">
                     <div class="call__bottom">
                         <label class="call__check">
                             <input type="checkbox" checked required>
-                            <span></span>
+                            <span>
+                                <svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 4.61119L3.7 7.18262L10 1.18262" stroke="#FF2B06" />
+                                </svg>
+                            </span>
                             <p>Вы даете согласие на <a href="">обработку персональных данных</a></p>
                         </label>
                         <button class="call__btn">
@@ -141,7 +146,7 @@
                         Почта:
                         <a href="mailto:info@timecampro.ru">info@timecampro.ru</a>
                     </div>
-                    <div class="call__soc">Соц. сети:
+                    <div class="call__soc"><span>Соц. сети:</span>
                         <a href="">
                             <img src="img/call-soc1.svg" alt="">
                         </a>
