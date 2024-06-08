@@ -195,6 +195,7 @@ $red: #e22126
         margin-bottom: 62px
         overflow: hidden
     &__title
+        margin: 0
         padding: 16px 42px
         font-weight: 700
         font-size: 32px
@@ -207,8 +208,8 @@ $red: #e22126
         &::before
             content: ""
             display: block
-            width: 100%
-            height: 100%
+            width: calc(100% - 2px)
+            height: calc(100% - 2px)
             position: absolute
             top: 0
             left: 0
@@ -431,7 +432,9 @@ $red: #e22126
             a
                 font-size: 13px
                 padding: 13px 10px
-
+    .team
+        &__wrap
+            grid-template-columns: repeat(1, 1fr)
 @media (max-width: 991px)
     .header
         &__menu, &__right
@@ -464,6 +467,23 @@ $red: #e22126
                 width: 100%
                 margin-top: 22px
 @media (max-width: 575px)
+    .team
+        padding-bottom: 46px
+        &__block
+            flex-direction: column
+        &__img
+            width: 100%
+            height: auto
+        &__cont
+            width: 100%
+            height: auto
+            padding: 26px
+        &__title
+            font-size: 20px
+            line-height: 120%
+            padding: 8px 18px
+        &__top
+            margin-bottom: 36px
     .call
         padding-bottom: 62px
         &__form
