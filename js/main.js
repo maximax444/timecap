@@ -57,3 +57,16 @@ menuOpen.addEventListener("click", (e) => {
     menuOpen.classList.toggle("active");
     menu.classList.toggle("active");
 });
+
+const swiper = new Swiper('.home-shooting .swiper', {
+
+    slidesPerView: 1,
+    spaceBetween: 19,
+    loop: true,
+    effect: "fade",
+    // Navigation arrows
+    navigation: {
+        nextEl: '.home-shooting__next',
+        prevEl: '.home-shooting__prev',
+    }
+});
