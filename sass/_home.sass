@@ -1,0 +1,108 @@
+.home
+    &-features
+        background: #fafafa
+        padding: 145px 0
+        clip-path: polygon(0 0, calc( 50% + 188px) 0, calc( 50% + 236px ) 34px, 100% 34px, 100% 100%, calc( 50% - 188px ) 100%, calc( 50% - 236px ) calc( 100% - 34px ), 0 calc( 100% - 34px ))
+        &__wrap
+            display: flex
+            justify-content: space-between
+            grid-gap: 30px
+        &__cont
+            width: 384px
+            max-width: 100%
+            padding-top: 13px
+        &__name
+            padding-top: 40px
+            font-weight: 400
+            font-size: 14px
+            line-height: 114%
+            text-align: center
+            color: #878787
+        &__first
+            width: 335px
+            padding-top: 23px
+            img
+                max-width: 100%
+        &__title
+            margin-top: 0
+            margin-bottom: 40px
+            font-weight: 700
+            font-size: 24px
+            line-height: 133%
+            color: #000
+            max-width: 220px
+        &__line
+            display: flex
+            margin-top: 32px
+        &__icon
+            width: 18px
+            margin-right: 20px
+        &__text
+            margin: 0
+            max-width: calc(100% - 38px)
+            font-weight: 400
+            font-size: 16px
+            line-height: 125%
+            color: #000
+@media(max-width: 1199px)
+    .home
+        &-features
+            padding: 80px 0
+            &__first
+                width: 244px
+                padding-top: 0
+            &__center
+                width: 400px
+                img
+                    max-width: 100%
+@media(max-width: 991px)
+    .home
+        &-features
+            &__wrap
+                flex-direction: column
+                align-items: center
+                grid-gap: 0
+            &__center
+                width: 100%
+                text-align: center
+            &__cont
+                width: 100%
+                padding: 50px 0
+            &__first
+                order: 3
+                width: 400px
+                text-align: center
+@media(max-width: 575px)
+    .home
+        &-features
+            padding: 64px 0
+            clip-path: polygon(0 0, calc( 50% + 64px) 0, calc( 50% + 89px ) 20px, 100% 20px, 100% 100%, calc( 50% - 64px ) 100%, calc( 50% - 89px ) calc( 100% - 20px ), 0 calc( 100% - 20px ))
+            &__wrap
+                flex-direction: column
+                align-items: center
+                grid-gap: 0
+            &__center
+                width: 100%
+                text-align: center
+            &__cont
+                width: 100%
+                padding: 50px 0
+            &__first
+                width: 300px
+                img
+                    max-width: 250px
+                    height: auto
+            &__name
+                padding-top: 25px
+                font-size: 12px
+                line-height: 117%
+            &__title
+                margin-bottom: 28px
+                font-size: 16px
+                line-height: 125%
+                max-width: 175px
+            &__text
+                font-size: 14px
+                line-height: 129%
+            &__line
+                margin-top: 24px
