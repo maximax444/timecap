@@ -48,3 +48,12 @@ thxClose.addEventListener("click", (e) => {
     e.preventDefault();
     popupThx.classList.remove('overlay-active');
 });
+
+let menuOpen = document.querySelector(".header__burg");
+let menu = document.querySelector(".menu");
+
+menuOpen.addEventListener("click", (e) => {
+    e.preventDefault();
+    menuOpen.classList.toggle("active");
+    menu.classList.toggle("active");
+});

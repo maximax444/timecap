@@ -109,6 +109,10 @@ $red: #e22126
                         transform: translate(20px)
                     &--left2
                         transform: translate(18px)
+    &__cab
+        display: none
+    &__burg
+        display: none
     &__wrap
         display: flex
         align-items: center
@@ -417,7 +421,8 @@ $red: #e22126
             display: flex
             &:hover
                 opacity: 0.7
-
+.menu
+    display: none
 @media (max-width: 1399px)
     .header
         &__right
@@ -441,6 +446,111 @@ $red: #e22126
     .header
         &__menu, &__right
             display: none
+        &__cab
+            display: flex
+        &__burg
+            width: 34px
+            height: 34px
+            display: flex
+            align-items: center
+            justify-content: center
+            background: url("../img/mob-menu.svg") center no-repeat
+            span
+                width: 16px
+                height: 1px
+                display: flex
+                background: #fff
+                position: relative
+                &::before
+                    content: ""
+                    display: block
+                    width: 16px
+                    height: 1px
+                    background: #fff
+                    position: absolute
+                    top: -6px
+                    left: 0
+                    transition: all 0.3s
+                &::after
+                    content: ""
+                    display: block
+                    width: 16px
+                    height: 1px
+                    background: #fff
+                    position: absolute
+                    top: 6px
+                    left: 0
+                    transition: all 0.3s
+            &.active
+                span
+                    height: 0
+                    &::before
+                        top: 0
+                        transform: rotate(-45deg)
+                    &::after
+                        top: 0
+                        transform: rotate(45deg)
+    .menu
+        display: flex
+        position: fixed
+        top: -110vh
+        left: 0
+        width: 100%
+        height: calc(100vh - calc(100vh - 100%))
+        background: #fafafa
+        z-index: 8
+        padding-top: 113px
+        overflow-y: scroll
+        flex-direction: column
+        justify-content: space-between
+        grid-gap: 100px
+        transition: all .5s
+        &.active
+            top: 0
+        .container
+            margin-top: 0
+        &__bottom
+            background: #fff
+            padding-top: 14px
+            padding-bottom: 30px
+            width: 100%
+        &__menu
+            margin: 0
+            padding: 0
+            list-style-type: none
+            li.active
+                a
+                    color: $red
+            a
+                display: block
+                padding: 19px
+                border-bottom: 1px solid #d9d9d9
+                text-align: center
+                font-weight: 400
+                font-size: 16px
+                line-height: 137%
+                color: #000
+                text-decoration: none
+            li:last-child a
+                border-bottom: 0
+        &__links
+            display: flex
+            a
+                width: 55%
+                background: #ededed
+                text-align: center
+                padding: 13px 4px
+                font-weight: 400
+                font-size: 14px
+                line-height: 157%
+                text-align: center
+                color: #000
+                text-decoration: none
+                &:nth-child(1)
+                    width: 45%
+                    clip-path: polygon(20px 0, 100% 0, 100% 100%, 0 100%, 0 15px)
+                &:nth-child(2)
+                    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 15px), calc(100% - 20px) 100%, 0 100%)
 
 @media (max-width: 767px)
     .footer
@@ -469,6 +579,38 @@ $red: #e22126
                 width: 100%
                 margin-top: 22px
 @media (max-width: 575px)
+    .page
+        padding-top: 127px
+    .header
+        &::before
+            height: 79px
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 19px), calc(50% + 79px) calc(100% - 19px), calc(50% + 55px) 100%, calc(50% - 55px) 100%, calc(50% - 79px) calc(100% - 19px), 0 calc(100% - 19px))
+        &::after
+            height: 78px
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 19px), calc(50% + 79px) calc(100% - 19px), calc(50% + 55px) 100%, calc(50% - 55px) 100%, calc(50% - 79px) calc(100% - 19px), 0 calc(100% - 19px))
+        &__wrap
+            padding: 11px 0
+        &__logo
+            height: 34px
+            width: 62px
+            a
+                margin-top: -4px
+            svg
+                width: 62px
+                height: auto
+        &.active
+            .header
+                &__wrap
+                    padding: 11px 0
+                &__logo
+                    a
+                        margin-top: -7px
+                    svg
+                        width: 46px
+            &::before
+                height: 56px
+            &::after
+                height: 55px
     .team
         padding-bottom: 46px
         &__block

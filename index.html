@@ -1,11 +1,267 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TIME CAM - съемка таймлапсов и аренда таймлапс боксов</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.min.css">
 </head>
+
 <body>
+    <div class="page">
+        <header class="header">
+            <div class="container">
+                <div class="header__wrap">
+                    <a target="_blank" href="https://p.timecam.pro/" class="header__cab">
+                        <img src="img/login-mob.svg" alt="">
+                    </a>
+                    <ul class="header__menu">
+                        <li><a href="/cameras.html">Оборудование</a></li>
+                        <li><a href="/po.html">ПО</a></li>
+                        <li><a href="/sphere.html">Области применения</a></li>
+                        <li><a href="/support.html">Поддержка</a></li>
+                    </ul>
+                    <div class="header__logo">
+                        <a href="/">
+                            <svg width="88" height="88" viewBox="0 0 88 88" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M44.0949 44L88 38.5278V0H0V38.5278L43.9051 44H44.0949Z" fill="#E22126" />
+                                <path d="M43.9051 44L0 49.4722V88H88V49.4722L44.0949 44H43.9051Z" fill="#EDEDED" />
+                                <path
+                                    d="M21.8599 17.7453H17.2314V13.8193H30.7881V17.7453H26.1597V30.1804H21.8599V17.7453Z"
+                                    fill="white" class="hid--left" />
+                                <path d="M36.3235 30.1804H32.0469V13.8193H36.3235V30.1804Z" fill="white" class="hid" />
+                                <path
+                                    d="M42.188 30.1804H38.0225V13.8193H42.188L47.3302 22.9119L52.4492 13.8193H56.6148V30.1804H52.4492V21.6943L48.7465 28.5462H45.9046L42.2019 21.7175L42.188 30.1804Z"
+                                    fill="white" class="hid" />
+                                <path
+                                    d="M58.3179 13.8193H70.6757V17.7453H62.5899V19.9675H69.2965V23.8934H62.5899V26.2545H70.8146V30.1804H58.3179V13.8193Z"
+                                    fill="white" class="hid" />
+                                <path
+                                    d="M26.0166 57.4722C27.7179 57.453 29.3905 57.9117 30.844 58.7963C32.2301 59.6261 33.3311 60.8581 34.0006 62.3287L29.8073 63.8611C29.4782 63.1681 28.9495 62.5893 28.2891 62.199C27.6012 61.7936 26.815 61.5854 26.0166 61.5972C25.4532 61.5862 24.8937 61.6938 24.3746 61.9132C23.8555 62.1325 23.3884 62.4586 23.0035 62.8703C22.6065 63.2831 22.2957 63.7707 22.0891 64.3049C21.8825 64.839 21.7842 65.409 21.8001 65.9815C21.768 67.1517 22.2007 68.287 23.0035 69.1389C23.3937 69.5421 23.8624 69.8611 24.3806 70.076C24.8988 70.291 25.4556 70.3975 26.0166 70.3889C26.815 70.4006 27.6012 70.1924 28.2891 69.787C28.9495 69.3968 29.4782 68.818 29.8073 68.125L34.0006 69.6805C33.3311 71.1511 32.2301 72.3831 30.844 73.2129C29.3922 74.1014 27.7184 74.5605 26.0166 74.537C24.8693 74.5658 23.728 74.3638 22.6603 73.9431C21.5925 73.5225 20.6201 72.8916 19.8006 72.0879C18.1992 70.4703 17.3008 68.2858 17.3008 66.0092C17.3008 63.7327 18.1992 61.5481 19.8006 59.9305C20.6193 59.1252 21.5914 58.4926 22.6592 58.0703C23.727 57.648 24.8687 57.4446 26.0166 57.4722Z"
+                                    fill="#1D1D1B" class="hid--left2" />
+                                <path
+                                    d="M38.2628 74.2451H33.7871L40.6418 57.7544H44.201L51.0279 74.2451H46.5338L45.5664 71.7961H39.2533L38.2628 74.2451ZM42.4284 63.9025L40.7806 68.0044H44.0529L42.4284 63.9025Z"
+                                    fill="#1D1D1B" class="hid" />
+                                <path
+                                    d="M56.1428 74.2451H51.9263V57.7544H56.1428L61.3219 66.9211L66.4826 57.7544H70.6991V74.2451H66.4826V65.6942L62.7382 72.597H59.8871L56.1428 65.7405V74.2451Z"
+                                    fill="#1D1D1B" class="hid" />
+                                <path
+                                    d="M39.3414 83.0462V84.3656H38.6147V80.6249H40.2902C40.4598 80.6186 40.629 80.6461 40.7879 80.7057C40.9468 80.7653 41.0923 80.8558 41.2159 80.9721C41.3343 81.0826 41.4288 81.2163 41.4934 81.3648C41.5579 81.5133 41.5913 81.6736 41.5913 81.8356C41.5913 81.9975 41.5579 82.1578 41.4934 82.3063C41.4288 82.4549 41.3343 82.5885 41.2159 82.699C41.0923 82.8153 40.9468 82.9058 40.7879 82.9654C40.629 83.025 40.4598 83.0525 40.2902 83.0462H39.3414ZM40.3041 81.2869H39.3414V82.4073H40.3041C40.3763 82.4099 40.4483 82.3972 40.5153 82.3701C40.5823 82.343 40.6428 82.302 40.6929 82.2499C40.7447 82.1986 40.7854 82.1372 40.8124 82.0695C40.8395 82.0018 40.8524 81.9293 40.8503 81.8564C40.8529 81.7841 40.8402 81.7122 40.8131 81.6452C40.786 81.5781 40.745 81.5176 40.6929 81.4675C40.6426 81.4104 40.5806 81.3647 40.5112 81.3335C40.4417 81.3024 40.3664 81.2865 40.2902 81.2869H40.3041Z"
+                                    fill="#1D1D1B" class="hid" />
+                                <path
+                                    d="M42.1187 80.6251H43.8451C44.1873 80.6145 44.5199 80.7393 44.7707 80.9724C44.8916 81.0804 44.9876 81.2133 45.0523 81.3619C45.117 81.5105 45.1489 81.6714 45.1456 81.8335C45.148 82.0657 45.0803 82.2932 44.9512 82.4863C44.8268 82.6807 44.6459 82.8325 44.4329 82.9214L45.2891 84.3659H44.4653L43.6784 83.0464H42.8083V84.3659H42.1187V80.6251ZM43.8451 81.2872H42.8083V82.4076H43.8219C43.8948 82.4097 43.9673 82.3968 44.0349 82.3697C44.1026 82.3426 44.164 82.3019 44.2153 82.2501C44.2656 82.198 44.305 82.1363 44.3312 82.0687C44.3574 82.0012 44.37 81.9291 44.3681 81.8566C44.3704 81.7848 44.3581 81.7133 44.3318 81.6464C44.3055 81.5796 44.2659 81.5187 44.2153 81.4677C44.1653 81.4126 44.1047 81.3682 44.0371 81.3372C43.9695 81.3062 43.8963 81.2891 43.8219 81.2872H43.8451Z"
+                                    fill="#1D1D1B" class="hid" />
+                                <path
+                                    d="M47.4317 80.5556C47.6893 80.55 47.9455 80.5965 48.1847 80.6924C48.4239 80.7882 48.6413 80.9315 48.8238 81.1136C49.0062 81.2957 49.15 81.5128 49.2464 81.7518C49.3428 81.9909 49.3899 82.247 49.3849 82.5047C49.3906 82.7626 49.3439 83.019 49.2477 83.2584C49.1515 83.4977 49.0078 83.7151 48.8252 83.8973C48.6426 84.0795 48.425 84.2228 48.1855 84.3184C47.946 84.4141 47.6895 84.4601 47.4317 84.4538C47.1739 84.4608 46.9174 84.4152 46.6778 84.3197C46.4382 84.2243 46.2206 84.0809 46.0382 83.8985C45.8559 83.7161 45.7126 83.4985 45.6172 83.2588C45.5217 83.0192 45.4761 82.7626 45.4831 82.5047C45.4774 82.2472 45.524 81.9912 45.6199 81.7522C45.7158 81.5131 45.8591 81.296 46.0412 81.1138C46.2233 80.9317 46.4403 80.7883 46.6793 80.6924C46.9183 80.5965 47.1742 80.55 47.4317 80.5556ZM46.2329 82.5047C46.2272 82.6697 46.2545 82.8342 46.3133 82.9885C46.3721 83.1427 46.4613 83.2836 46.5754 83.4029C46.6881 83.5158 46.8219 83.6055 46.9692 83.6666C47.1165 83.7278 47.2745 83.7592 47.434 83.7592C47.5935 83.7592 47.7515 83.7278 47.8988 83.6666C48.0461 83.6055 48.1799 83.5158 48.2926 83.4029C48.5163 83.1573 48.6404 82.837 48.6404 82.5047C48.6404 82.1724 48.5163 81.8521 48.2926 81.6066C48.1824 81.4894 48.0488 81.3967 47.9005 81.3345C47.7522 81.2723 47.5925 81.242 47.4317 81.2455C47.2715 81.2415 47.1123 81.2716 46.9647 81.3338C46.8171 81.3961 46.6844 81.4891 46.5754 81.6066C46.4624 81.7247 46.3739 81.8641 46.3151 82.0167C46.2563 82.1693 46.2284 82.332 46.2329 82.4955V82.5047Z"
+                                    fill="#1D1D1B" class="hid" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="header__right">
+                        <a href="">Смотреть шоурил</a>
+                        <a href="" class="modal">Получить консультацию</a>
+                        <a target="_blank" href="https://p.timecam.pro/" class="header__login">
+                            Войти
+                            <svg width="33" height="15" viewBox="0 0 33 15" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20.4395 3.89746L24.2476 7.45828L20.4395 11.0191" stroke="black"
+                                    stroke-width="0.988636" />
+                                <path d="M24.3456 7.45801L16.0449 7.45801" stroke="black" stroke-width="0.988636" />
+                                <path d="M24.6094 0.509766H31.5581V14.407H24.6094" stroke="black" />
+                            </svg>
+                        </a>
+                    </div>
+                    <a href="" class="header__burg"><span></span></a>
+                </div>
+            </div>
+        </header>
+        <div class="menu">
+            <div class="container">
+                <ul class="menu__menu">
+                    <li><a href="/cameras.html">Оборудование</a></li>
+                    <li><a href="/po.html">ПО</a></li>
+                    <li><a href="/sphere.html">Области применения</a></li>
+                    <li><a href="/support.html">Поддержка</a></li>
+                </ul>
+            </div>
+            <div class="menu__bottom">
+                <div class="container">
+                    <div class="menu__links">
+                        <a href="">Смотреть шоурил</a>
+                        <a href="" class="modal">Получить консультацию</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="team">
+            <div class="container">
+                <div class="team__top" data-aos="fade-up" data-aos-duration="1000">
+                    <h2 class="team__title">Обратиться
+                        <span>в поддержку</span>
+                    </h2>
+                </div>
+                <div class="team__wrap">
+                    <div class="team__block" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="team__img">
+                            <img src="img/team1.png" alt="">
+                        </div>
+                        <div class="team__cont">
+                            <div class="team__name">Денис</div>
+                            <a href="tel:+7 (916) 654-62-05" class="team__phone">+7 (916) 654-62-05</a>
+                            <div class="team__time">
+                                <img src="img/team-time.svg" alt="">с 10:00 до 21:00
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team__block" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="team__img">
+                            <img src="img/team2.png" alt="">
+                        </div>
+                        <div class="team__cont">
+                            <div class="team__name">Наталья</div>
+                            <a href="tel:+7 (980) 553-17-49" class="team__phone">+7 (980) 553-17-49</a>
+                            <div class="team__time">
+                                <img src="img/team-time.svg" alt="">с 10:00 до 21:00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="call">
+            <div class="container">
+                <form class="call__form" data-aos="fade-up" data-aos-duration="1000">
+                    <input type="text" placeholder="Ваше имя*" required>
+                    <input type="tel" onkeypress="phoneInputValidation(event)" placeholder="Номер телефона*" required>
+                    <input type="text" placeholder="Ваш вопрос">
+                    <div class="call__bottom">
+                        <label class="call__check">
+                            <input type="checkbox" checked required>
+                            <span>
+                                <svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 4.61119L3.7 7.18262L10 1.18262" stroke="#FF2B06" />
+                                </svg>
+                            </span>
+                            <p>Вы даете согласие на <a href="">обработку персональных данных</a></p>
+                        </label>
+                        <button class="call__btn">
+                            Свяжитесь со мной
+                            <svg width="30" height="7" viewBox="0 0 30 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 3.68262H29M29 3.68262L26.3103 1.18262M29 3.68262L26.3103 6.18262"
+                                    stroke="#AEAEAE" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                <div class="call__credits" data-aos="fade-up" data-aos-duration="1000">
+                    <div class="call__mail">
+                        Почта:
+                        <a href="mailto:info@timecampro.ru">info@timecampro.ru</a>
+                    </div>
+                    <div class="call__soc"><span>Соц. сети:</span>
+                        <a href="">
+                            <img src="img/call-soc1.svg" alt="">
+                        </a>
+                        <a href="">
+                            <img src="img/call-soc2.svg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer__wrap">
+                    <div class="footer__copy">© 2011-2024. Все права защищены.</div>
+                    <a href="/" class="footer__logo">
+                        <img src="img/footer-logo.svg" alt="">
+                    </a>
+                    <div class="footer__polit"><a href="">Политика конфиденциальности</a></div>
+                </div>
+            </div>
+        </footer>
+        <div class="overlay overlay-call">
+            <div class="popup">
+                <div class="popup__close">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M37.4696 20.3938L39.5 21.9827V39.5H22.6087H0.5V21.9827L2.53038 20.3938L3.0335 20L2.53038 19.6062L0.5 18.0173V0.5H16.9565H39.5V18.0173L37.4696 19.6062L36.9665 20L37.4696 20.3938Z"
+                            stroke="#D9D9D9" />
+                        <path d="M13 13L27 27" stroke="#878787" stroke-miterlimit="10" />
+                        <path d="M27 13L13 27" stroke="#878787" stroke-miterlimit="10" />
+                    </svg>
+                </div>
+                <div class="overlay-call__title">Получить консультацию</div>
+                <form action="" class="overlay-call__form">
+                    <input type="text" placeholder="Ваше имя*" required>
+                    <input type="tel" onkeypress="phoneInputValidation(event)" placeholder="Номер телефона*" required>
+                    <input type="text" placeholder="Ваш вопрос">
+                    <div class="overlay-call__bottom">
+                        <label class="call__check">
+                            <input type="checkbox" checked required>
+                            <span>
+                                <svg width="11" height="8" viewBox="0 0 11 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M1 4.61119L3.7 7.18262L10 1.18262" stroke="#FF2B06" />
+                                </svg>
+                            </span>
+                            <p>Вы даете согласие на <a href="">обработку персональных данных</a></p>
+                        </label>
+                        <button class="call__btn">
+                            Свяжитесь со мной
+                            <svg width="30" height="7" viewBox="0 0 30 7" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M0 3.68262H29M29 3.68262L26.3103 1.18262M29 3.68262L26.3103 6.18262"
+                                    stroke="#AEAEAE" />
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="overlay overlay-thx">
+            <div class="popup">
+                <div class="popup__close">
+                    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M37.4696 20.3938L39.5 21.9827V39.5H22.6087H0.5V21.9827L2.53038 20.3938L3.0335 20L2.53038 19.6062L0.5 18.0173V0.5H16.9565H39.5V18.0173L37.4696 19.6062L36.9665 20L37.4696 20.3938Z"
+                            stroke="#D9D9D9" />
+                        <path d="M13 13L27 27" stroke="#878787" stroke-miterlimit="10" />
+                        <path d="M27 13L13 27" stroke="#878787" stroke-miterlimit="10" />
+                    </svg>
+                </div>
+                <div class="overlay-thx__icon">
+                    <svg width="65" height="46" viewBox="0 0 65 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M44.5 46L0.500004 46L0.500003 15.5L20.5 -7.6613e-06L64.4995 -7.62944e-06L64.5 30.5L44.5 46Z"
+                            fill="#E22126" />
+                        <path d="M23.5 23.8571L28.9 29L41.5 17" stroke="white" stroke-width="3" />
+                    </svg>
+                </div>
+                <div class="overlay-thx__title">Ваша запись принята, большое спасибо!</div>
+                <div class="overlay-thx__descr">В ближайшее время наш консультант свяжется с Вами.</div>
+                <a href="" class="overlay-thx__btn">
+                    Ок
+                    <svg width="30" height="7" viewBox="0 0 30 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 3.68262H29M29 3.68262L26.3103 1.18262M29 3.68262L26.3103 6.18262"
+                            stroke="#AEAEAE" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
     <script src="js/main.js"></script>
 </body>
+
 </html>
