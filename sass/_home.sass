@@ -216,6 +216,109 @@
                 font-size: 20px
                 line-height: 130%
                 color: #000
+    &-about
+        padding: 128px 0
+        &__wrap
+            display: flex
+            justify-content: space-between
+            grid-gap: 20px
+        &__cont
+            width: 670px
+        &__main
+            width: 540px
+        &__first
+            margin: 0
+            font-weight: 400
+            font-size: 20px
+            line-height: 120%
+            color: #000
+        &__text
+            p
+                margin-bottom: 0
+                margin-top: 20px
+                font-size: 16px
+                line-height: 125%
+                color: #000
+                font-weight: 400
+                span
+                    color: #878787
+        &__descr
+            margin: 0
+            max-width: 440px
+            font-weight: 400
+            font-size: 16px
+            line-height: 125%
+            color: #878787
+        &__nums
+            display: flex
+            margin-bottom: 55px
+        &__num
+            padding-top: 3px
+            padding-bottom: 13px
+            font-weight: 400
+            font-size: 16px
+            line-height: 125%
+            color: #000
+            b
+                display: block
+                margin-bottom: 10px
+                font-weight: 700
+                font-size: 24px
+                line-height: 175%
+                background: linear-gradient(90deg, #e22126 0%, #590100 100%)
+                background-clip: text
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+                span
+                    font-size: 32px
+            &:first-child
+                border-right: 1px solid #d9d9d9
+                padding-right: 20px
+                width: 45%
+            &:last-child
+                padding-left: 65px
+                width: 55%
+    &-ya
+        display: flex
+        margin-bottom: 130px
+        &__col
+            width: 50%
+        &__small
+            height: 50vh
+            width: 100%
+            position: relative
+            span
+                position: absolute
+                top: 0
+                left: 0
+                overflow: hidden
+                height: 0%
+            img
+                width: 50vw
+                object-fit: cover
+                height: 50vh
+            &:last-child
+                span
+                    bottom: 0
+                    top: auto
+        &__big
+            width: 100%
+            height: 100vh
+            position: relative
+            span
+                position: absolute
+                top: 0
+                right: 0
+                left: auto !important
+                overflow: hidden
+                width: 0%
+                display: flex
+                justify-content: flex-end
+            img
+                width: 50vw
+                min-width: 50vw
+                object-fit: cover
+                height: 100vh
 @media(max-width: 1199px)
     .home
         &-shooting
@@ -262,6 +365,15 @@
                 order: 3
                 width: 400px
                 text-align: center
+        &-about
+            &__wrap
+                grid-gap: 0
+                flex-direction: column
+            &__main
+                width: 100%
+                margin-bottom: 22px
+            &__cont
+                width: 100%
 @media(max-width: 575px)
     .home
         &-shooting
@@ -375,3 +487,52 @@
                 span
                     font-size: 16px
                     line-height: 125%
+        &-about
+            padding: 62px 0
+            &__text
+                p
+                    font-size: 14px
+                    line-height: 129%
+            &__first
+                font-size: 16px
+                line-height: 125%
+            &__descr
+                font-size: 14px
+                line-height: 129%
+            &__nums
+                margin-bottom: 36px
+            &__num
+                font-size: 14px
+                line-height: 129%
+                padding-top: 0
+                padding-bottom: 3px
+                b
+                    margin-bottom: 0
+                    font-size: 18px
+                    line-height: 233%
+                    span
+                        font-size: 24px
+                &:first-child
+                    width: calc(100% + 13px)
+                &:last-child
+                    padding-left: 49px
+                    width: calc(100% - 13px)
+        &-ya
+            flex-direction: column
+            padding-top: 50px
+            margin-bottom: 50px
+            &__col
+                width: 100%
+            &__big
+                height: calc(100% - 50px)
+                width: 100%
+                img
+                    width: 100vw
+                    height: 50vh
+                    min-width: 100vw
+            &__small
+                height: 25vh
+                width: 100%
+                img
+                    width: 100vw
+                    height: 25vh
