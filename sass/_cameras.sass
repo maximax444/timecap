@@ -40,7 +40,7 @@
         &::before
             content: ""
             display: block
-            width: calc(100% - 62px)
+            width: calc(100% - 70px)
             height: 1px
             background: #d9d9d9
             position: absolute
@@ -102,6 +102,7 @@
             display: none
             grid-gap: 40px
             justify-content: space-between
+            align-items: flex-start
         &__wrap
             width: 820px
             columns: 2
@@ -111,6 +112,7 @@
             width: 430px
             img
                 max-width: 100%
+                height: auto
         &__block
             padding: 28px 0
             border-bottom: 1px solid #d9d9d9
@@ -299,12 +301,18 @@
 
 @media(max-width: 1199px)
     .cameras
+        &-prod
+            &__wrap
+                columns: 1
+                width: 500px
         &-red
             &__img
                 right: -200px
 
 @media(max-width: 991px)
     .cameras
+        &__wrap
+            columns: auto
         &-opt
             &__wrap
                 flex-direction: column
@@ -326,8 +334,79 @@
                 right: -250px
                 img
                     max-width: 900px
+        &-prod
+            &__cont
+                flex-direction: column-reverse
+            &__img
+                width: 100%
+            &__wrap
+                width: 100%
 @media(max-width: 575px)
     .cameras
+        padding-bottom: 46px
+        &__title
+            margin-bottom: 8px
+            font-size: 24px
+            line-height: 117%
+        &__icon
+            width: 36px
+            margin-right: 22px
+            img
+                max-width: 100%
+                max-height: 36px
+                width: auto
+                height: auto
+        &__block
+            padding: 26px 0
+            &::before
+                width: 100%
+        &__wrap
+            margin-bottom: 5px
+        &__descr
+            width: calc(100% - 58px)
+            font-size: 14px
+            line-height: 129%
+        &__text
+            font-size: 16px
+            line-height: 137%
+        &-prod
+            &__name
+                grid-gap: 13px
+                &:hover
+                    .cameras-prod
+                        &__title
+                            font-size: 16px
+                            line-height: 125%
+                            color: $red
+                        &__toggle
+                            path:nth-child(1)
+                                stroke: #d9d9d9
+            &__el
+                margin-top: 24px
+                &.active
+                    .cameras-prod__title
+                        font-size: 16px
+                        line-height: 125%
+            &__title
+                font-size: 16px
+                line-height: 125%
+            &__toggle
+                min-width: 25px
+                width: 25px
+                svg
+                    width: 100%
+                    height: auto
+            &__cont
+                padding-top: 37px
+                padding-bottom: 8px
+                grid-gap: 0
+            &__img
+                margin-bottom: 4px
+            &__block
+                padding: 24px 0
+                span,b
+                    font-size: 14px
+                    line-height: 129%
         &-opt
             padding-top: 46px
             padding-bottom: 75px
