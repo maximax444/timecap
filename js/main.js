@@ -58,6 +58,27 @@ menuOpen.addEventListener("click", (e) => {
     menu.classList.toggle("active");
 });
 
+
+let cameras = document.querySelectorAll(".cameras-prod__el");
+let camerasNames = document.querySelectorAll(".cameras-prod__name");
+
+if (camerasNames) {
+    camerasNames.forEach(el => {
+        el.addEventListener("click", () => {
+            let currCamera = el.closest(".cameras-prod__el");
+            if (currCamera.classList.contains("active")) {
+                currCamera.classList.remove("active");
+            } else {
+                cameras.forEach(el2 => {
+                    el2.classList.remove("active");
+                    currCamera.classList.add("active");
+                });
+            }
+        });
+    });
+}
+
+
 const swiper = new Swiper('.home-shooting .swiper', {
 
     slidesPerView: 1,

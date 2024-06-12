@@ -1,0 +1,383 @@
+.cameras
+    padding-bottom: 126px
+    &__title
+        margin-top: 0
+        margin-bottom: 23px
+        font-weight: 700
+        font-size: 46px
+        line-height: 117%
+        color: #000
+    &__wrap
+        columns: 2
+        gap: 100px
+        margin-bottom: 60px
+        position: relative
+        &::before
+            content: ""
+            display: block
+            width: 100%
+            height: 1px
+            background: #fff
+            position: absolute
+            z-index: 2
+            top: 0
+            right: 0
+    &__text
+        margin: 0
+        max-width: 800px
+        font-weight: 400
+        font-size: 20px
+        line-height: 120%
+        color: #000
+    &__block
+        padding: 32px 0
+        display: flex
+        align-items: flex-start
+        position: relative
+        &:last-child
+            .cameras__icon
+                justify-content: flex-start
+        &::before
+            content: ""
+            display: block
+            width: calc(100% - 62px)
+            height: 1px
+            background: #d9d9d9
+            position: absolute
+            top: 0
+            right: 0
+    &__descr
+        width: calc(100% - 70px)
+        font-weight: 400
+        font-size: 16px
+        line-height: 125%
+        color: #000
+    &__icon
+        display: flex
+        justify-content: center
+        width: 42px
+        margin-right: 28px
+    &-prod
+        padding-top: 64px
+        &__el
+            margin-top: 36px
+        &__name
+            display: flex
+            align-items: center
+            justify-content: space-between
+            grid-gap: 30px
+            cursor: pointer
+            user-select: none
+            &:hover
+                .cameras-prod
+                    &__title
+                        font-size: 32px
+                        line-height: 125%
+                        color: #e22126
+                    &__line
+                        background: $red
+                    &__toggle
+                        path:nth-child(1)
+                            stroke: $red
+        &__title
+            font-weight: 700
+            font-size: 24px
+            line-height: 133%
+            color: #000
+            white-space: nowrap
+            transition: all 0.1s
+        &__line
+            background: #d9d9d9
+            width: 100%
+            height: 1px
+            transition: all 0.3s
+        &__toggle
+            display: flex
+            min-width: 40px
+            path
+                transition: all 0.3s
+        &__cont
+            padding-top: 47px
+            padding-bottom: 28px
+            display: none
+            grid-gap: 40px
+            justify-content: space-between
+        &__wrap
+            width: 820px
+            columns: 2
+            gap: 88px
+        &__img
+            display: flex
+            width: 430px
+            img
+                max-width: 100%
+        &__block
+            padding: 28px 0
+            border-bottom: 1px solid #d9d9d9
+            display: flex
+            justify-content: space-between
+            grid-gap: 20px
+            span
+                font-weight: 400
+                font-size: 16px
+                line-height: 125%
+                color: #878787
+            b
+                font-weight: 500
+                font-size: 16px
+                line-height: 125%
+                text-align: right
+                color: #000
+                white-space: nowrap
+        &__el
+            &.active
+                .cameras
+                    &-prod
+                        &__cont
+                            display: flex
+                        &__title
+                            font-size: 32px
+                            line-height: 125%
+                            color: #e22126
+                        &__line
+                            background: $red
+                        &__toggle
+                            path
+                                &:nth-child(3)
+                                    stroke: $red
+                                &:nth-child(2)
+                                    opacity: 0
+    &-opt
+        padding-top: 114px
+        padding-bottom: 133px
+        background: #fafafa
+        clip-path: polygon(calc( 50% - 236px ) 34px, calc( 50% - 188px) 0, 100% 0, 100% 100%, 0 100%, 0 34px)
+        &__wrap
+            display: flex
+            justify-content: space-between
+        &__top
+            margin-bottom: 46px
+        &__title
+            &::after
+                border-top: 210px solid #fafafa
+                border-bottom: 210px solid #fafafa
+        &__main
+            width: 452px
+            padding-right: 40px
+            padding-top: 32px
+        &__cont
+            width: 820px
+            columns: 2
+            gap: 90px
+            position: relative
+            &::before
+                content: ""
+                display: block
+                width: 100%
+                height: 1px
+                background: #fafafa
+                position: absolute
+                z-index: 2
+                top: 0
+                left: 0
+        &__descr
+            margin: 0
+            font-weight: 400
+            font-size: 16px
+            line-height: 125%
+            color: #878787
+            max-width: 345px
+        &__block
+            padding: 10px 0
+            overflow: hidden
+            border-top: 1px solid #d9d9d9
+            display: flex
+            align-items: center
+        &__num
+            font-weight: 600
+            font-size: 24px
+            line-height: 233%
+            color: #d9d9d9
+            width: 62px
+        &__name
+            font-weight: 400
+            font-size: 16px
+            line-height: 125%
+            color: #000
+            width: calc(100% - 62px)
+    &-red
+        margin-bottom: 140px
+        margin-top: -34px
+        background: $red
+        clip-path: polygon(0 0, calc( 50% + 188px) 0, calc( 50% + 236px ) 34px, 100% 34px, 100% 100%, calc( 50% - 188px ) 100%, calc( 50% - 236px ) calc( 100% - 34px ), 0 calc( 100% - 34px ))
+        &.home-red
+            margin-bottom: 0
+            margin-top: 0
+        &__wrap
+            position: relative
+            padding-top: 104px
+            padding-bottom: 118px
+            padding-left: 167px
+        &__img
+            display: flex
+            position: absolute
+            bottom: 0
+            right: -50px
+            pointer-events: none
+            img
+                margin-right: -430px
+        &__cont
+            width: 475px
+            max-width: 100%
+        &__title
+            margin: 0
+            margin-bottom: 24px
+            font-weight: 700
+            font-size: 24px
+            line-height: 133%
+            color: #fff
+            max-width: 400px
+            position: relative
+            &::before
+                content: ""
+                display: block
+                height: 1px
+                width: 100vw
+                background: #fff
+                position: absolute
+                top: 50%
+                right: calc(100% + 24px)
+        &__text
+            margin-top: 0
+            margin-bottom: 32px
+            font-weight: 400
+            font-size: 16px
+            line-height: 125%
+            color: #fff
+        &__btn
+            display: inline-block
+            padding: 11px 32px
+            font-weight: 500
+            font-size: 14px
+            line-height: 157%
+            text-align: center
+            color: #fff
+            text-decoration: none
+            position: relative
+            &::before
+                content: ""
+                display: block
+                width: calc(100% + 0px)
+                height: calc(100% + 0px)
+                background: $red
+                position: absolute
+                top: 0px
+                left: 0px
+                z-index: -1
+                transition: all 0.3s
+                clip-path: polygon(19px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 19px) 100%, 0 100%, 0 15px)
+            &::after
+                content: ""
+                display: block
+                width: calc(100% + 2px)
+                height: calc(100% + 2px)
+                background: #fff
+                position: absolute
+                top: -1px
+                left: -1px
+                z-index: -2
+                clip-path: polygon(19px 0, 100% 0, 100% calc(100% - 15px), calc(100% - 19px) 100%, 0 100%, 0 15px)
+            &:hover
+                color: $red
+                &::before
+                    opacity: 0
+@media(max-width: 1399px)
+    .cameras
+        &-red
+            &__wrap
+                padding-left: 0
+
+@media(max-width: 1199px)
+    .cameras
+        &-red
+            &__img
+                right: -200px
+
+@media(max-width: 991px)
+    .cameras
+        &-opt
+            &__wrap
+                flex-direction: column
+            &__main
+                width: 100%
+                margin-bottom: 32px
+            &__cont
+                width: 100%
+        &-red
+            &__img
+                right: -150px
+                img
+                    max-width: 1000px
+
+@media(max-width: 767px)
+    .cameras
+        &-red
+            &__img
+                right: -250px
+                img
+                    max-width: 900px
+@media(max-width: 575px)
+    .cameras
+        &-opt
+            padding-top: 46px
+            padding-bottom: 75px
+            clip-path: polygon(0 0, calc( 50% + 64px) 0, calc( 50% + 89px ) 20px, 100% 20px, 100% 100%, calc( 50% - 64px ) 100%, calc( 50% - 89px ) calc( 100% - 20px ), 0 calc( 100% - 20px ))
+            &__top
+                margin-bottom: 28px
+            &__descr
+                font-size: 16px
+                line-height: 125%
+            &__main
+                padding-right: 0
+                margin-bottom: 13px
+                padding-top: 0
+            &__cont
+                gap: 0
+                columns: auto
+            &__name
+                font-size: 14px
+                line-height: 143%
+            &__num
+                font-size: 18px
+                line-height: 311%
+                padding-top: 1px
+            &__block
+                padding: 1px 0 1px
+        &-red
+            margin-bottom: 50px
+            margin-top: -20px
+            clip-path: polygon(0 0, calc( 50% + 64px) 0, calc( 50% + 89px ) 20px, 100% 20px, 100% 100%, calc( 50% - 64px ) 100%, calc( 50% - 89px ) calc( 100% - 20px ), 0 calc( 100% - 20px ))
+            &.home-red
+                margin-bottom: 0
+                margin-top: 0
+            &__wrap
+                padding-bottom: 235px
+                padding-top: 66px
+            &__cont
+                padding-left: 54px
+            &__title
+                margin-bottom: 26px
+                font-size: 16px
+                line-height: 125%
+                &::before
+                    top: 10px
+                    width: 38px
+                    right: calc(100% + 16px)
+            &__text
+                font-size: 14px
+                line-height: 129%
+            &__img
+                right: 0
+                img
+                    margin-right: -250px
+                    max-width: 700px
