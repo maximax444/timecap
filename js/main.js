@@ -74,23 +74,10 @@ if (camerasNames) {
                     currCamera.classList.add("active");
                 });
             }
+            AOS.refresh();
         });
     });
 }
-
-
-const swiper = new Swiper('.home-shooting .swiper', {
-
-    slidesPerView: 1,
-    spaceBetween: 19,
-    loop: true,
-    effect: "fade",
-    // Navigation arrows
-    navigation: {
-        nextEl: '.home-shooting__next',
-        prevEl: '.home-shooting__prev',
-    }
-});
 
 const hwaysNames = document.querySelectorAll(".home-ways__name");
 const hwaysBlocks = document.querySelectorAll(".home-ways__block");
@@ -108,7 +95,67 @@ if (hwaysNames) {
                     });
                     el.closest(".home-ways__block").classList.add("active");
                 }
+                
+                AOS.refresh();
             }
         });
     });
 }
+
+const howTabs = document.querySelectorAll(".home-how__tab");
+const howConts = document.querySelectorAll(".home-how__cont-block");
+if (howTabs) {
+    howTabs.forEach((el) => {
+
+        el.addEventListener('click', function () {
+            let index = Array.prototype.indexOf.call(howTabs, this);
+            if (!this.classList.contains('active')) {
+                document.querySelectorAll('.home-how__tab').forEach((el2) => {
+                    el2.classList.remove('active');
+                });
+                this.classList.add('active');
+                howConts.forEach((el3) => {
+                    el3.classList.remove('active');
+                });
+                howConts[index].classList.add('active')
+            }
+        });
+    });
+}
+
+const howNames = document.querySelectorAll(".home-how__name");
+const howBlocks = document.querySelectorAll(".home-how__cont-block");
+
+if (howNames) {
+    howNames.forEach(el => {
+        el.addEventListener("click", () => {
+            if (window.innerWidth <= 991) {
+                if (el.closest(".home-how__cont-block").classList.contains("active")) {
+                    el.closest(".home-how__cont-block").classList.remove("active");
+                } else {
+                    howBlocks.forEach(el2 => {
+                        el2.classList.remove("active");
+                    });
+                    el.closest(".home-how__cont-block").classList.add("active");
+                }
+                AOS.refresh();
+            }
+        });
+    });
+}
+
+
+
+
+const swiper = new Swiper('.home-shooting .swiper', {
+
+    slidesPerView: 1,
+    spaceBetween: 19,
+    loop: true,
+    effect: "fade",
+    // Navigation arrows
+    navigation: {
+        nextEl: '.home-shooting__next',
+        prevEl: '.home-shooting__prev',
+    }
+});

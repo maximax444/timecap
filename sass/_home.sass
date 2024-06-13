@@ -281,6 +281,78 @@
             transition: all 0.3s
         &__cont
             display: none
+    &-how
+        padding: 134px 0
+        background: #fafafa
+        clip-path: polygon(0 34px, calc( 50% - 236px ) 34px, calc( 50% - 188px) 0, 100% 0, 100% 100%, calc( 50% - 188px ) 100%, calc( 50% - 236px ) calc( 100% - 34px ), 0 calc( 100% - 34px ))
+        &__wrap
+            display: flex
+            justify-content: space-between
+            grid-gap: 40px
+        &__main
+            width: 300px
+        &__cont
+            width: 870px
+        .team__title
+            &::after
+                border-top: 210px solid #fafafa
+                border-bottom: 210px solid #fafafa
+        &__tab
+            font-weight: 400
+            font-size: 20px
+            line-height: 130%
+            color: #000
+            margin-bottom: 38px
+            display: flex
+            align-items: center
+            grid-gap: 16px
+            transition: all 0.3s
+            cursor: pointer
+            user-select: none
+            white-space: nowrap
+            svg
+                transition: all 0.3s
+                opacity: 0
+            &.active, &:hover
+                color: $red
+                svg
+                    opacity: 1
+        &__name
+            display: none
+        &__cont
+            &-block
+                display: none
+                &.active
+                    display: block
+        &__block
+            padding: 28px 0
+            display: flex
+            align-items: center
+            position: relative
+            &::after
+                content: ""
+                display: block
+                width: calc(100% - 64px)
+                height: 1px
+                background: #d9d9d9
+                position: absolute
+                top: 0
+                right: 0
+            &:first-child::after
+                display: none
+        &__num
+            font-weight: 600
+            font-size: 24px
+            line-height: 233%
+            color: #d9d9d9
+            width: 64px
+        &__text
+            max-width: 720px
+            width: calc(100% - 64px)
+            font-weight: 400
+            font-size: 16px
+            line-height: 125%
+            color: #000
     &-key
         padding: 126px 0
         &__wrap
@@ -541,7 +613,7 @@
                 min-width: 28px
                 svg
                     width: 100%
-                    height: autos
+                    height: auto
                 path
                     transition: all 0.3s
             &__name
@@ -566,6 +638,73 @@
                                     opacity: 0
                                 &:nth-child(3)
                                     stroke: $red
+        &-how
+            &__wrap
+                flex-direction: column
+                grid-gap: 0
+            &__main
+                width: 100%
+            &__tabs
+                display: none
+            &__cont
+                width: 100%
+                &-block
+                    display: block
+                    &.active
+                        .home-how
+                            &__nums
+                                display: block
+                            &__subtitle
+                                color: $red
+                            &__line
+                                background: $red
+                            &__toggle
+                                path
+                                    &:nth-child(2)
+                                        opacity: 0
+                                    &:nth-child(3)
+                                        stroke: $red
+            &__subtitle
+                font-weight: 400
+                font-size: 18px
+                line-height: 144%
+                text-align: right
+                color: #000
+                white-space: nowrap
+            &__nums
+                display: none
+                padding-bottom: 13px
+            &__toggle
+                width: 28px
+                min-width: 28px
+                display: flex
+                svg
+                    width: 100%
+                    height: auto
+            &__line
+                height: 1px
+                width: 100%
+                background: #d9d9d9
+            &__name
+                display: flex
+                align-items: center
+                justify-content: space-between
+                grid-gap: 11px
+                margin-bottom: 24px
+            &__block
+                padding: 26px 0
+                &:first-child
+                    padding-top: 0
+                &::after
+                    width: calc(100% - 46px)
+            &__text
+                font-size: 14px
+                line-height: 129%
+                width: calc(100% - 46px)
+            &__num
+                font-size: 18px
+                line-height: 100%
+                width: 46px
         &-key
             &__wrap
                 flex-direction: column
@@ -720,6 +859,10 @@
             &__subtitle
                 font-size: 16px
                 line-height: 125%
+        &-how
+            padding-top: 50px
+            padding-bottom: 40px
+            clip-path: polygon(0 0, calc( 50% + 64px) 0, calc( 50% + 89px ) 20px, 100% 20px, 100% 100%, calc( 50% - 64px ) 100%, calc( 50% - 89px ) calc( 100% - 20px ), 0 calc( 100% - 20px ))
         &-key
             padding-top: 48px
             padding-bottom: 50px
