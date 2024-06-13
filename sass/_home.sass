@@ -216,6 +216,150 @@
                 font-size: 20px
                 line-height: 130%
                 color: #000
+    &-ways
+        padding-top: 140px
+        padding-bottom: 95px
+        &__title
+            font-weight: 400
+            font-size: 16px
+            line-height: 162%
+            color: #878787
+            position: relative
+            margin-bottom: 65px
+            &::before
+                content: ""
+                display: block
+                width: 100vw
+                height: 1px
+                position: absolute
+                right: calc(100% + 14px)
+                top: 13px
+                background: #d9d9d9
+        &__block
+            padding-top: 75px
+            padding-bottom: 45px
+        &__name
+            display: flex
+            align-items: center
+            grid-gap: 28px
+            position: relative
+        &__subtitle
+            font-weight: 700
+            font-size: 32px
+            line-height: 125%
+            color: #000
+            white-space: nowrap
+            transition: all 0.3s
+        &__toggle
+            display: none
+        &__img
+            background: #fff
+            padding: 0 10px
+            position: absolute
+            right: 110px
+            top: 50%
+            width: 455px
+            height: 310px
+            margin-top: -155px
+            transition: all 0.3s
+            opacity: 0
+            img
+                width: 100%
+                height: 100%
+                object-fit: cover
+        &__descr
+            padding-top: 10px
+            font-weight: 400
+            font-size: 14px
+            line-height: 143%
+            color: #000
+        &__line
+            display: block
+            width: 100%
+            background: #d9d9d9
+            height: 1px
+            transition: all 0.3s
+        &__cont
+            display: none
+    &-key
+        padding: 126px 0
+        &__wrap
+            display: flex
+            justify-content: space-between
+            align-items: flex-end
+            grid-gap: 40px
+        &__cont
+            width: 690px
+            display: flex
+            flex-direction: column
+            align-items: flex-start
+        &__subtitle
+            margin-bottom: 20px
+            font-weight: 500
+            font-size: 20px
+            line-height: 130%
+            color: #000
+        &__text
+            max-width: 680px
+            margin: 0
+            margin-bottom: 42px
+            font-weight: 400
+            font-size: 16px
+            line-height: 125%
+            color: #878787
+        &__img
+            display: flex
+            width: 530px
+            img
+                width: 100%
+                height: auto
+        &__btn
+            padding: 13px 32px
+            padding-right: 28px
+            display: flex
+            align-items: center
+            justify-content: center
+            grid-gap: 8px
+            font-weight: 500
+            font-size: 14px
+            line-height: 157%
+            text-align: center
+            color: #e22126
+            text-decoration: none
+            position: relative
+            svg
+                margin-top: 2px
+            path
+                transition: all 0.3s
+            &::before
+                content: ""
+                display: block
+                position: absolute
+                top: 0px
+                left: 0px
+                width: calc(100% + 0px)
+                height: calc(100% + 0px)
+                background: #fff
+                z-index: -1
+                transition: all 0.3s
+                clip-path: polygon(20px 0, 100% 0, 100% calc( 100% - 15px ), calc( 100% - 20px ) 100%, 0 100%, 0 15px)
+            &::after
+                content: ""
+                display: block
+                position: absolute
+                top: -1px
+                left: -1px
+                width: calc(100% + 2px)
+                height: calc(100% + 2px)
+                background: $red
+                z-index: -2
+                clip-path: polygon(20px 0, 100% 0, 100% calc( 100% - 15px ), calc( 100% - 20px ) 100%, 0 100%, 0 15px)
+            &:hover
+                color: #fff
+                path
+                    stroke: #fff
+                &::before
+                    opacity: 0
     &-about
         padding: 128px 0
         &__wrap
@@ -319,6 +463,21 @@
                 min-width: 50vw
                 object-fit: cover
                 height: 100vh
+@media(min-width: 992px)
+    .home-ways
+        &__block:hover
+            .home-ways
+                &__subtitle
+                    color: $red
+                &__line
+                    background: $red
+                &__img
+                    opacity: 1
+@media(max-width: 1399px)
+    .home
+        &-ways
+            &__img
+                right: 20px
 @media(max-width: 1199px)
     .home
         &-shooting
@@ -348,6 +507,12 @@
             &__img
                 width: 100%
                 margin-top: 40px
+        &-ways
+            &__img
+                right: 20px
+                width: 250px
+                height: 140px
+                margin-top: -70px
 @media(max-width: 991px)
     .home
         &-features
@@ -365,6 +530,49 @@
                 order: 3
                 width: 400px
                 text-align: center
+        &-ways
+            &__img
+                display: none
+            &__cont
+                padding-top: 35px
+            &__toggle
+                display: flex
+                width: 28px
+                min-width: 28px
+                svg
+                    width: 100%
+                    height: autos
+                path
+                    transition: all 0.3s
+            &__name
+                cursor: pointer
+                grid-gap: 11px
+            &__block
+                padding: 32px 0
+                &.active
+                    .home-ways
+                        &__cont
+                            display: flex
+                            img
+                                width: 100%
+                                height: auto
+                        &__line
+                            background: $red
+                        &__subtitle
+                            color: $red
+                        &__toggle
+                            path
+                                &:nth-child(2)
+                                    opacity: 0
+                                &:nth-child(3)
+                                    stroke: $red
+        &-key
+            &__wrap
+                flex-direction: column
+            &__cont
+                width: 100%
+            &__img
+                width: 100%
         &-about
             &__wrap
                 grid-gap: 0
@@ -487,6 +695,42 @@
                 span
                     font-size: 16px
                     line-height: 125%
+        &-ways
+            padding-top: 42px
+            padding-bottom: 40px
+            &__title
+                font-size: 14px
+                line-height: 129%
+                padding-left: 49px
+                margin-bottom: 32px
+                &::before
+                    left: 0
+                    top: 9px
+                    width: 25px
+                    right: auto
+            &__block
+                padding-bottom: 16px
+                padding-top: 0
+            &__cont
+                padding-bottom: 24px
+            &__descr
+                padding-right: 30px
+                font-size: 14px
+                line-height: 129%
+            &__subtitle
+                font-size: 16px
+                line-height: 125%
+        &-key
+            padding-top: 48px
+            padding-bottom: 50px
+            &__subtitle
+                margin-bottom: 20px
+                font-size: 18px
+                line-height: 144%
+            &__text
+                font-size: 14px
+                line-height: 129%
+                margin-bottom: 24px
         &-about
             padding: 62px 0
             &__text

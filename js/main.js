@@ -91,3 +91,24 @@ const swiper = new Swiper('.home-shooting .swiper', {
         prevEl: '.home-shooting__prev',
     }
 });
+
+const hwaysNames = document.querySelectorAll(".home-ways__name");
+const hwaysBlocks = document.querySelectorAll(".home-ways__block");
+
+if (hwaysNames) {
+    hwaysNames.forEach(el => {
+        el.addEventListener("click", () => {
+            if (window.innerWidth <= 991) {
+
+                if (el.closest(".home-ways__block").classList.contains("active")) {
+                    el.closest(".home-ways__block").classList.remove("active");
+                } else {
+                    hwaysBlocks.forEach(el2 => {
+                        el2.classList.remove("active");
+                    });
+                    el.closest(".home-ways__block").classList.add("active");
+                }
+            }
+        });
+    });
+}
