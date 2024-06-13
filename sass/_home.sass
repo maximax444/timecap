@@ -281,6 +281,57 @@
             transition: all 0.3s
         &__cont
             display: none
+    &-services
+        padding: 140px 0
+        padding-bottom: 118px
+        .team__title
+            span
+                display: inline
+        &__wrap
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            grid-gap: 22px
+        &__img
+            background: #fafafa
+            margin-bottom: 44px
+            display: flex
+            align-items: center
+            justify-content: center
+            height: 305px
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 38px 100%, 0 calc(100% - 30px))
+            img
+                max-width: 90%
+                max-height: 90%
+        &__block
+            &:nth-child(2)
+                .home-services__img
+                    height: 380px
+            &:nth-child(3)
+                .home-services__img
+                    height: 450px
+        &__name
+            font-weight: 500
+            font-size: 20px
+            line-height: 130%
+            color: #000
+            margin-bottom: 20px
+        &__text
+            margin: 0
+            font-weight: 400
+            font-size: 16px
+            line-height: 125%
+            color: #878787
+            padding-right: 32px
+        &__link
+            display: block
+            overflow: hidden
+            padding: 22px 0
+            svg
+                transition: all 0.3s
+                transform: translateX(-25px)
+            &:hover
+                svg
+                    transform: translateX(0)
     &-how
         padding: 134px 0
         background: #fafafa
@@ -638,6 +689,14 @@
                                     opacity: 0
                                 &:nth-child(3)
                                     stroke: $red
+        &-services
+            &__wrap
+                grid-template-columns: repeat(1, 1fr)
+                grid-gap: 50px
+            &__block
+                &:nth-child(2), &:nth-child(3)
+                    .home-services__img
+                        height: 305px
         &-how
             &__wrap
                 flex-direction: column
@@ -859,6 +918,21 @@
             &__subtitle
                 font-size: 16px
                 line-height: 125%
+        &-services
+            padding-top: 50px
+            padding-bottom: 26px
+            &__img
+                margin-bottom: 30px
+            &__name
+                margin-bottom: 14px
+                font-size: 18px
+                line-height: 144%
+            &__text
+                padding-right: 0
+                font-size: 14px
+                line-height: 129%
+            &__wrap
+                grid-gap: 32px
         &-how
             padding-top: 50px
             padding-bottom: 40px
