@@ -191,13 +191,22 @@ $red: #e22126
         transform: rotate(-22deg)
     100%
         transform: rotate(338deg)
+@keyframes mainScroll
+    0%
+        transform: translateY(0)
+    50%
+        transform: translateY(20px)
+    100%
+        transform: translateY(0)
 .page
     padding-top: 166px
     overflow: hidden
     &.home
-        padding-top: 70px
+        padding-top: 0px
 .main
-    height: calc(100vh - 70px)
+    height: calc(100vh)
+    position: relative
+    overflow: hidden
     video
         width: 100%
         height: 100%
@@ -211,6 +220,8 @@ $red: #e22126
         display: flex
         align-items: center
         justify-content: center
+        transform: scale(200%)
+        opacity: 0
         span
             width: 600px
             max-width: 100%
@@ -222,6 +233,69 @@ $red: #e22126
             text-align: center
             color: transparent
             -webkit-text-stroke: #fff 1.5px
+    &__circles
+        position: absolute
+        top: 50%
+        left: 50%
+        margin-left: -168px
+        margin-top: -68px
+        display: flex
+        z-index: 5
+    &__red
+        width: 270px
+        height: 270px
+        border-radius: 50%
+        border: 1.5px solid $red
+        position: absolute
+        top: 50%
+        left: 50%
+        margin-top: -35px
+        margin-left: -135px
+        z-index: 5
+    &__grey
+        width: 354px
+        height: 354px
+        border-radius: 50%
+        border: 1.5px solid #ddd
+        position: absolute
+        top: 50%
+        left: 50%
+        margin-top: -77px
+        margin-left: -177px
+        z-index: 5
+    &__mask
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        display: flex
+        align-items: center
+        justify-content: center
+        z-index: 4
+        img
+            position: relative
+            top: 100px
+    &__scroll
+        position: absolute
+        left: calc(50% - 11px)
+        bottom: 26px
+        display: flex
+        z-index: 5
+        circle
+            animation: 3s mainScroll 0s infinite
+    &__subtitle
+        font-weight: 700
+        font-size: 32px
+        line-height: 125%
+        text-transform: uppercase
+        text-align: center
+        color: #000
+        position: absolute
+        top: 180px
+        z-index: 5
+        left: 0
+        width: 100%
 .team
     padding-bottom: 110px
     &__top
@@ -609,6 +683,25 @@ $red: #e22126
 @media (max-width: 575px)
     .page
         padding-top: 127px
+    .main
+        &__subtitle
+            top: 130px
+            font-size: 20px
+            line-height: 140%
+        &__title span
+            width: 270px
+            font-size: 20px
+            line-height: 140%
+            -webkit-text-stroke: #fff 1px
+        &__mask
+            img
+                top: 40px
+        &__red
+            margin-top: -95px
+        &__grey
+            margin-top: -137px
+        &__circles
+            margin-top: -128px
     .header
         &::before
             height: 79px

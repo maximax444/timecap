@@ -1,0 +1,246 @@
+.home
+    &-scope
+        padding-top: 102px
+        padding-bottom: 130px
+        background: #fafafa
+        clip-path: polygon(0 34px, calc( 50% - 236px ) 34px, calc( 50% - 188px) 0, calc( 50% + 188px) 0, calc( 50% + 236px) 34px, 100% 34px, 100% 100%, 0 100%)
+        .team
+            &__top
+                justify-content: center
+                text-align: center
+            &__title
+                &::after
+                    border-top: 210px solid #fafafa
+                    border-bottom: 210px solid #fafafa
+        &__bottom
+            border-top: 1px solid #d9d9d9
+            display: flex
+        &__info
+            width: 50%
+            display: flex
+            align-items: flex-start
+            padding-top: 48px
+            &:nth-child(1)
+                padding-right: 89px
+                border-right: 1px solid #d9d9d9
+            &:nth-child(2)
+                padding-left: 110px
+        &__icon
+            display: flex
+            width: 43px
+            margin-right: 22px
+        &__text
+            width: calc(100% - 65px)
+            padding-top: 9px
+            margin: 0
+            font-weight: 400
+            font-size: 16px
+            line-height: 125%
+            color: #878787
+            span
+                display: block
+                margin-bottom: 8px
+                font-weight: 500
+                font-size: 20px
+                line-height: 130%
+                color: #000
+        &__wrap
+            padding-top: 9px
+            padding-bottom: 60px
+            display: flex
+            justify-content: center
+            position: relative
+        &__block
+            position: absolute
+            width: 335px
+            text-align: center
+            font-weight: 400
+            font-size: 16px
+            line-height: 125%
+            text-align: center
+            color: #000
+            span
+                display: block
+                margin-bottom: 10px
+                font-weight: 700
+                font-size: 32px
+                line-height: 175%
+                text-align: center
+                background: linear-gradient(90deg, #e22126 0%, #590100 100%)
+                background-clip: text
+                -webkit-background-clip: text
+                -webkit-text-fill-color: transparent
+                b
+                    font-size: 24px
+            &:nth-child(1)
+                top: -17px
+                left: 0
+                &::after
+                    content: ""
+                    display: block
+                    width: 390px
+                    height: 56px
+                    background: url("../img/scope1.svg") center no-repeat
+                    position: absolute
+                    left: 50%
+                    top: calc(100% + 16px)
+            &:nth-child(2)
+                top: -17px
+                right: 0
+                &::after
+                    content: ""
+                    display: block
+                    width: 390px
+                    height: 56px
+                    background: url("../img/scope2.svg") center no-repeat
+                    position: absolute
+                    right: 50%
+                    top: calc(100% + 16px)
+            &:nth-child(3)
+                bottom: 160px
+                left: 0
+                &::after
+                    content: ""
+                    display: block
+                    width: 410px
+                    height: 56px
+                    background: url("../img/scope3.svg") center no-repeat
+                    position: absolute
+                    left: 50%
+                    bottom: calc(100% + 40px)
+            &:nth-child(4)
+                bottom: 160px
+                right: 0
+                &::after
+                    content: ""
+                    display: block
+                    width: 410px
+                    height: 56px
+                    background: url("../img/scope4.svg") center no-repeat
+                    position: absolute
+                    right: 50%
+                    bottom: calc(100% + 40px)
+@media(max-width: 1399px)
+    .home-scope
+        &__block
+            &:nth-child(1), &:nth-child(3)
+                text-align: left
+                span
+                    text-align: left
+                &::after
+                    left: 20%
+            &:nth-child(2), &:nth-child(4)
+                text-align: right
+                span
+                    text-align: right
+                &::after
+                    right: 20%
+@media(max-width: 1199px)
+    .home-scope
+        &__block
+            &:nth-child(1), &:nth-child(3)
+                text-align: left
+                span
+                    text-align: left
+                &::after
+                    left: 0%
+                    transform: scale(0.8)
+            &:nth-child(2), &:nth-child(4)
+                text-align: right
+                span
+                    text-align: right
+                &::after
+                    right: 0%
+                    transform: scale(0.8)
+
+@media(max-width: 991px)
+    .home-scope
+        &__wrap
+            padding-top: 140px
+            padding-bottom: 121px
+            width: 335px
+            max-width: 100%
+            margin: 0 auto
+            &>img
+                width: 242px
+                height: auto
+        &__block
+            width: 146px
+            font-size: 14px
+            line-height: 129%
+            color: #000
+            span
+                font-size: 24px
+                line-height: 100%
+                b
+                    font-size: 18px
+            &:nth-child(1)
+                top: 30px
+                &::after
+                    width: 90px
+                    height: 106px
+                    background: url("../img/scope1-1.svg") center no-repeat
+                    left: -2px
+                    transform: none
+            &:nth-child(2)
+                top: 30px
+                &::after
+                    width: 90px
+                    height: 106px
+                    background: url("../img/scope2-1.svg") center no-repeat
+                    right: -2px
+                    transform: none
+            &:nth-child(3)
+                bottom: 46px
+                &::after
+                    width: 116px
+                    height: 166px
+                    background: url("../img/scope3-1.svg") center no-repeat
+                    left: -2px
+                    bottom: calc(100% + 16px)
+                    transform: none
+            &:nth-child(4)
+                bottom: 46px
+                width: 200px
+                &::after
+                    width: 116px
+                    height: 166px
+                    background: url("../img/scope4-1.svg") center no-repeat
+                    right: -2px
+                    bottom: calc(100% + 16px)
+                    transform: none
+        &__bottom
+            flex-direction: column
+        &__info
+            width: 100%
+            &:nth-child(1)
+                padding-right: 0
+                border-right: 0
+            &:nth-child(2)
+                padding-left: 0
+
+@media(max-width: 575px)
+    .home-scope
+        padding-top: 50px
+        padding-bottom: 16px
+        clip-path: polygon(0 20px, calc( 50% - 89px ) 20px, calc( 50% - 64px) 0, calc( 50% + 64px) 0, calc( 50% + 89px) 20px, 100% 20px, 100% 100%, 0 100%)
+        &__bottom
+            padding-top: 32px
+        &__info
+            margin-bottom: 24px
+            padding-top: 0
+        &__text
+            font-size: 14px
+            line-height: 129%
+            padding-top: 0
+            width: calc(100% - 49px)
+            span
+                margin-bottom: 8px
+                font-size: 16px
+                line-height: 125%
+        &__icon
+            width: 34px
+            margin-right: 15px
+            svg
+                width: 100%
+                height: auto
